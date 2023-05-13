@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Numerics;
 
 namespace Pi.Core;
@@ -30,11 +31,11 @@ public class GosperSeriesCalcPi
     public BigInteger CalcY0() => n27 * I - n12;
 
     /*
-       (M11 M12)      (M1)        (M11*M1+M12*M2)
+       x = 27*i - 12
+       (M11 M12)      (x)        (M11*x+M12*5)
        (       )   *  (  )    = 
-       (M21 M22)      (M2)        (M21*M1+M22*M2)
+       (M21 M22)      (5)        (M21*x+M22*5)
    */
-
     public BigInteger CalcY()
     {
         var x = CalcY0();
@@ -48,6 +49,12 @@ public class GosperSeriesCalcPi
     // 675*i - 216
     public BigInteger CalcZ0() => n675 * I - n216;
 
+    /*
+       x = 675*i - 216
+       (M11 M12)      (x  )        (M11*x+M12*5)
+       (       )   *  (   )    = 
+       (M21 M22)      (125)        (M21*x+M22*5)
+   */
     public BigInteger CalcZ()
     {
         var x = CalcZ0();
@@ -64,6 +71,12 @@ public class GosperSeriesCalcPi
         {
             var y = CalcY();
             var z = CalcZ();
+
+            Debug.WriteLine("M:");
+            Debug.WriteLine($"{M.M11} {M.M12}");
+            Debug.WriteLine($"{M.M21} {M.M22}");
+            Debug.WriteLine($"y: {y}");
+            Debug.WriteLine($"z: {z}");
 
             if (y == z)
             {
