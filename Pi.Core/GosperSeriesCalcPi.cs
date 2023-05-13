@@ -72,11 +72,12 @@ public class GosperSeriesCalcPi
             var y = CalcY();
             var z = CalcZ();
 
-            Debug.WriteLine("M:");
-            Debug.WriteLine($"{M.M11} {M.M12}");
-            Debug.WriteLine($"{M.M21} {M.M22}");
-            Debug.WriteLine($"y: {y}");
-            Debug.WriteLine($"z: {z}");
+            // Debug.WriteLine("M:");
+            // Debug.WriteLine($"{M.M11} {M.M12}");
+            // Debug.WriteLine($"{M.M21} {M.M22}");
+            // Debug.WriteLine($"i: {I}");
+            // Debug.WriteLine($"y: {y}");
+            // Debug.WriteLine($"z: {z}");
 
             if (y == z)
             {
@@ -92,9 +93,10 @@ public class GosperSeriesCalcPi
             // j=3(3i+1)(3i+2)
             var j = n3 * (n3 * I + BigInteger.One) * (n3 * I + n2);
 
+            // Debug.WriteLine($"j: {j}");
             M.MultTo
             (
-                I * (n2 - BigInteger.One), j * (n5 * I - n2),
+                I * (n2 * I - BigInteger.One), j * (n5 * I - n2),
                 BigInteger.Zero, j
             );
             I++;

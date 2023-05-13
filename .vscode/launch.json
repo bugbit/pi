@@ -9,6 +9,17 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Pi/bin/Debug/net7.0/Pi.dll>",
+            "args": [],
+            "cwd": "${workspaceFolder}/Pi",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        },
+        {
+            "name": ".NET Core Launch (tests)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
             "program": "${workspaceFolder}/Pi.Tests/bin/Debug/net7.0/Pi.Tests.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Pi.Tests",

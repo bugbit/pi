@@ -53,6 +53,7 @@ function pi_generator() {
 			// z = (M_00*x + 125*M_01) / (M_10*x + 125*M_11)
 			var z = div(state[0].multiply(x).add(n_125.multiply(state[1])), state[2].multiply(x).add(n_125.multiply(state[3])));
 
+			console.log('i',i.toString());
 			console.log('y',y.toString());
 			console.log('z',z.toString());
 
@@ -64,6 +65,8 @@ function pi_generator() {
 			} else {
 				// j = 3*(3*i+1)*(3*i+2)
 				var j = n_3.multiply(n_3.multiply(i).add(1)).multiply(n_3.multiply(i).add(n_2));
+
+				console.log('j',j.toString());
 
 				// X = ( [i*(2*i-1), j*(5*i-2)], [0, j] )
 				var X = [i.multiply(n_2.multiply(i).subtract(1)), j.multiply(n_5.multiply(i).subtract(2)), n_0, j];
