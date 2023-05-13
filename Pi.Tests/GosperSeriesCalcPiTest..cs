@@ -18,5 +18,25 @@ public class GosperSeriesCalcPiTest
         ndec = pi.NextDigit();
 
         Assert.AreEqual(1, ndec);
+
+        ndec = pi.NextDigit();
+
+        Assert.AreEqual(4, ndec);
+
+        ndec = pi.NextDigit();
+
+        Assert.AreEqual(1, ndec);
+
+        ndec = pi.NextDigit();
+
+        Assert.AreEqual(5, ndec);
+
+        ndec = pi.NextDigit();
+
+        Assert.AreEqual(9, ndec);
+
+        ndec = pi.NextDigit();
+
+        Assert.AreEqual(2, ndec);
     }
 }
