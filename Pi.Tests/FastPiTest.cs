@@ -9,7 +9,7 @@ public class FastPiTest
     [TestMethod]
     public void TestFirst5Dec()
     {
-        var pi = new FastPi();
+        var pi = new SpigotAlgorithmCalcPi();
         var piExpected = "3141592";
         var piStr = pi.CalcPiNDigit(7);
 
@@ -20,7 +20,7 @@ public class FastPiTest
     [TestMethod]
     public async Task TestFirst1000Dec()
     {
-        var pi = new FastPi();
+        var pi = new SpigotAlgorithmCalcPi();
         var httpClient = new HttpClient() { };
         var piExpected = (await httpClient.GetStringAsync("http://pi2e.ch/blog/wp-content/uploads/2017/03/pi_dec_1k.txt")).Replace(".", "");
         var piStr = pi.CalcPiNDigit(1000 + 1);

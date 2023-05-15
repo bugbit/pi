@@ -1,6 +1,6 @@
 namespace Pi.Core;
 
-public class FastPi
+public class SpigotAlgorithmCalcPi
 {
     public string CalcPiNDigit(int digits)
     {
