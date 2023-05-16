@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Pi/bin/Debug/net7.0/Pi.dll>",
+            "program": "${workspaceFolder}/Pi/bin/Debug/net7.0/Pi.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Pi",
             "stopAtEntry": false,

@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace Pi.Core;
 
 public class SpigotAlgorithmCalcPi
@@ -34,13 +36,13 @@ public class SpigotAlgorithmCalcPi
             pi[i] = (x[x.Length - 1] / 10);
 
 
-            r[x.Length - 1] = x[x.Length - 1] % 10; ;
+            r[x.Length - 1] = x[x.Length - 1] % 10;
 
             for (int j = 0; j < x.Length; j++)
                 x[j] = r[j] * 10;
         }
 
-        var result = "";
+        var result = new StringBuilder();
 
         uint c = 0;
 
@@ -49,9 +51,10 @@ public class SpigotAlgorithmCalcPi
             pi[i] += c;
             c = pi[i] / 10;
 
-            result = (pi[i] % 10).ToString() + result;
+            //result = (pi[i] % 10).ToString() + result;
+            result.Insert(0, pi[i] % 10);
         }
 
-        return result;
+        return result.ToString();
     }
 }

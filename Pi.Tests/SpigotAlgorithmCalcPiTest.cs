@@ -16,7 +16,7 @@ public class FastPiTest
         Assert.AreEqual(piExpected.Length, piStr.Length);
         Assert.AreEqual(piExpected, piStr);
     }
-
+    
     [TestMethod]
     public async Task TestFirst1000Dec()
     {
