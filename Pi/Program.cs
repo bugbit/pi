@@ -5,7 +5,8 @@ Console.WriteLine("num dec: ");
 
 var ndec = int.Parse(Console.ReadLine());
 //var pi = new GosperSeriesCalcPi();
-var pi = new SpigotAlgorithmCalcPi();
+// var pi = new SpigotAlgorithmCalcPi();
+var pi = new MachinSerie();
 var watch = Stopwatch.StartNew();
 
 /*
