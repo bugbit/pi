@@ -15,6 +15,7 @@ for (var i = 0; i <= ndec; i++)
 */
 
 pi.CalcPiNDigit(ndec + 1);
+//pi.CalcPiNDigitAsThread(ndec + 1);
 
 watch.Stop();
 

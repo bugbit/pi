@@ -15,12 +15,34 @@ public class MachinSerie
         var x = new BigNumber(digits - 1);
         var y = new BigNumber(digits - 1);
 
-        x.ArcTan(16, 5);
-        y.ArcTan(4, 239);
+        //x.ArcTan(16, 5);
+        CalcArcTanX(x);
+        //y.ArcTan(4, 239);
+        CalcArcTanY(y);
         x.Subtract(y);
 
         return x.Print(false).Substring(0, digits);
     }
+
+    public string CalcPiNDigitAsThread(int digits)
+    {
+        var x = new BigNumber(digits - 1);
+        var y = new BigNumber(digits - 1);
+        var threadX = new Thread(n => CalcArcTanX((BigNumber)n!));
+        var threadY = new Thread(n => CalcArcTanY((BigNumber)n!));
+
+        threadX.Start(x);
+        threadY.Start(y);
+        threadX.Join();
+        threadY.Join();
+
+        x.Subtract(y);
+
+        return x.Print(false).Substring(0, digits);
+    }
+
+    private static void CalcArcTanX(BigNumber x) => x.ArcTan(16, 5);
+    private static void CalcArcTanY(BigNumber y) => y.ArcTan(4, 239);
 
     private class BigNumber
     {
