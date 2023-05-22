@@ -12,4 +12,6 @@
 [Número Pi con dos millones de decimales (1,1 MB)](https://www.solosequenosenada.com/misc/PI/pi_CON_2_MILLONES_de_decimales.zip)<br>
 [Número Pi con diez millones de decimales (5,6 MB)](https://www.solosequenosenada.com/misc/PI/pi_CON_10_MILLONES_de_decimales.zip)<br>
 [Número Pi con cien millones de decimales (56,1 MB)](https://www.solosequenosenada.com/misc/PI/pi_CON_100_MILLONES_de_decimales.zip)<br>
-[Curiosidad pi](http://3con14.com/32-%C3%BAtiles/curiosidades/71-decimales-de-pi.html)
+[Curiosidad pi](http://3con14.com/32-%C3%BAtiles/curiosidades/71-decimales-de-pi.html)<br>
+[Algoritmo calcula pi](https://repositorio.uam.es/bitstream/handle/10486/693628/martin_masuda_antonio_tfg.pdf)<br>
+[Algoritmo calcula pi](https://gaceta.rsme.es/abrir.php?id=611)<br>
