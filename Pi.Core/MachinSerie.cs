@@ -41,8 +41,8 @@ public class MachinSerie
         return x.Print(false).Substring(0, digits);
     }
 
-    private static void CalcArcTanX(BigNumber x) => x.ArcTan2(16, 5);
-    private static void CalcArcTanY(BigNumber y) => y.ArcTan2(4, 239);
+    private static void CalcArcTanX(BigNumber x) => x.ArcTan(16, 5);
+    private static void CalcArcTanY(BigNumber y) => y.ArcTan(4, 239);
 
     private class BigNumber
     {
@@ -272,7 +272,7 @@ public class MachinSerie
                 if (term.IsZero())
                     break;
 
-                neg.Subtract(term);
+                neg.Add(term);
             }
 
             this.Assign(pos);
