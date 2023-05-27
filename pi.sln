@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pi.Core", "Pi.Core\Pi.Core.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pi.Tests", "Pi.Tests\Pi.Tests.csproj", "{E971332B-1207-4980-892B-D88AF75F1809}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pi", "Pi\Pi.csproj", "{A81D6533-4A42-4DD8-B072-BC73312E059C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{E971332B-1207-4980-892B-D88AF75F1809}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E971332B-1207-4980-892B-D88AF75F1809}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E971332B-1207-4980-892B-D88AF75F1809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A81D6533-4A42-4DD8-B072-BC73312E059C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A81D6533-4A42-4DD8-B072-BC73312E059C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A81D6533-4A42-4DD8-B072-BC73312E059C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A81D6533-4A42-4DD8-B072-BC73312E059C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

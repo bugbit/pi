@@ -41,8 +41,8 @@ public class MachinSerie
         return x.Print(false).Substring(0, digits);
     }
 
-    private static void CalcArcTanX(BigNumber x) => x.ArcTan(16, 5);
-    private static void CalcArcTanY(BigNumber y) => y.ArcTan(4, 239);
+    private static void CalcArcTanX(BigNumber x) => x.ArcTan2(16, 5);
+    private static void CalcArcTanY(BigNumber y) => y.ArcTan2(4, 239);
 
     private class BigNumber
     {
@@ -217,6 +217,66 @@ public class MachinSerie
                     this.Add(term);
                 subtractTerm = !subtractTerm;
             }
+        }
+
+        public void ArcTan2(UInt32 multiplicand, UInt32 reciprocal)
+        {
+            BigNumber X = new BigNumber(maxDigits, multiplicand);
+            X.Divide(reciprocal);
+            reciprocal *= reciprocal;
+
+            var reciprocal2 = reciprocal;
+
+            reciprocal *= reciprocal;
+
+            BigNumber pos = new BigNumber(maxDigits);
+            BigNumber X1 = new BigNumber(maxDigits);
+            BigNumber term = new BigNumber(maxDigits);
+
+            X1.Assign(X);
+            pos.Assign(X);
+
+            UInt32 divisor = 1;
+
+            while (true)
+            {
+                X1.Divide(reciprocal);
+                term.Assign(X1);
+                divisor += 4;
+                term.Divide(divisor);
+                if (term.IsZero())
+                    break;
+
+                pos.Add(term);
+            }
+
+            BigNumber neg = new BigNumber(maxDigits);
+            BigNumber X2 = new BigNumber(maxDigits);
+
+            X2.Assign(X);
+            neg.Assign(X);
+            divisor = 3;
+
+            X2.Divide(reciprocal2);
+            term.Assign(X2);
+            divisor += 4;
+            term.Divide(divisor);
+            neg.Subtract(term);
+
+            while (true)
+            {
+                X2.Divide(reciprocal);
+                term.Assign(X2);
+                divisor += 4;
+                term.Divide(divisor);
+                if (term.IsZero())
+                    break;
+
+                neg.Subtract(term);
+            }
+
+            this.Assign(pos);
+            this.Subtract(neg);
         }
     }
 }

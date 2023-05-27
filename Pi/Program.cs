@@ -1,7 +1,11 @@
 ﻿using System.Diagnostics;
 using Pi.Core;
 
-Console.WriteLine("num dec: ");
+Console.Write("algoritmo: ");
+
+var alg = Console.ReadLine();
+
+Console.Write("num dec: ");
 
 var ndec = int.Parse(Console.ReadLine());
 //var pi = new GosperSeriesCalcPi();
@@ -14,8 +18,15 @@ for (var i = 0; i <= ndec; i++)
     pi.NextDigit();
 */
 
-pi.CalcPiNDigit(ndec + 1);
-//pi.CalcPiNDigitAsThread(ndec + 1);
+switch (alg)
+{
+    case "1":
+        pi.CalcPiNDigit(ndec + 1);
+        break;
+    case "2":
+        pi.CalcPiNDigitAsThread(ndec + 1);
+        break;
+}
 
 watch.Stop();
 
